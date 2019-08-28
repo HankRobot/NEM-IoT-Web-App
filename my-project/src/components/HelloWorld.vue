@@ -36,7 +36,9 @@ import {Account,
         UInt64,
         MosaicId} from 'nem2-sdk';
 
-const node = 'http://3.1.202.148:3000';
+import request from 'request'
+
+const node = 'http://103.3.60.174:3000';
 
 export default {
   name: 'HelloWorld',
@@ -46,6 +48,20 @@ export default {
     }
   },
   methods:{
+    checkvalidity(hashstring){
+      var url = node + '/transaction/' + hashstring + '/status';
+      console.log(url);
+      request(url, function (error, response, body) {
+        const user = JSON.parse(body);
+        if ( (response && response.statusCode) == 200 || user["status"] == "Success") {
+          console.log("Transaction Success!");
+        }
+        else{
+          console.log("Transaction failed");
+        }
+      });
+    },
+
     aggregate(){
       /* start block 01 */
       const transactionHttp = new TransactionHttp(node);
@@ -89,6 +105,11 @@ export default {
       console.log(signedTransaction.hash);
 
       transactionHttp.announce(signedTransaction);
+
+      var self = this;
+      setTimeout(function(){
+        self.checkvalidity(signedTransaction.hash.toString());
+      },2000);
     }
   }
 }
