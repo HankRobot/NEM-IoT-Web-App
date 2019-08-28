@@ -101,15 +101,18 @@ export default {
       /* start block 02 */
       const networkGenerationHash = "9F1979BEBA29C47E59B40393ABB516801A353CFC0C18BC241FEDE41939C907E7";
       const signedTransaction = account.sign(aggregateTransaction, networkGenerationHash);
-      console.log(signedTransaction.hash);
+      console.log(signedTransaction.hash);  
 
-      transactionHttp.announce(signedTransaction);
-      /*
+      setTimeout(() => {
+        transactionHttp.announce(signedTransaction);
+      }, 2000);
+
+      
       var self = this;
       setTimeout(function(){
         self.checkvalidity(signedTransaction.hash.toString());
       },2000);
-      */
+      
     }
   }
 }
