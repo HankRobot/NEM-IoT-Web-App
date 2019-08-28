@@ -18,7 +18,6 @@
     </table>
     <br/>
     <button @click="aggregate">Send</button>
-
     
   </div>
 </template>
