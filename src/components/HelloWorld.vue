@@ -37,7 +37,7 @@ import {Account,
 
 import request from 'request'
 
-const node = 'http://103.3.60.174:3000';
+const node = 'http://47.107.245.217:3000';
 
 export default {
   name: 'HelloWorld',
