@@ -35,7 +35,7 @@ import {Account,
         UInt64,
         MosaicId} from 'nem2-sdk';
 
-import request from 'request'
+import https from 'https'
 
 const node = 'http://103.3.60.174:3000';
 
@@ -50,14 +50,15 @@ export default {
     checkvalidity(hashstring){
       var url = node + '/transaction/' + hashstring + '/status';
       console.log(url);
-      request(url, function (error, response, body) {
-        const user = JSON.parse(body);
-        if ( (response && response.statusCode) == 200 || user["status"] == "Success") {
-          console.log("Transaction Success!");
-        }
-        else{
-          console.log("Transaction failed");
-        }
+      https.get("url", (resp) => {
+        var data = "";
+        resp.on("data", (chunk) => {
+          data += chunk;
+        });
+        resp.on("end", () => {
+            context.log(data);
+            context.done();
+        });
       });
     },
 
