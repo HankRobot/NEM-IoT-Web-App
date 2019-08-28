@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
 
-    <h2>Controlling Multiple IoT Devices using NEM Catapult</h2>
+    <h2>Controlling Multiple IoT Devices using NEM Catapult!</h2>
     
     <table class="center">
       <tr>
