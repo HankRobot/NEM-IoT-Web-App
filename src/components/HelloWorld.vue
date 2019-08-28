@@ -104,11 +104,12 @@ export default {
       console.log(signedTransaction.hash);
 
       transactionHttp.announce(signedTransaction);
-
+      /*
       var self = this;
       setTimeout(function(){
         self.checkvalidity(signedTransaction.hash.toString());
       },2000);
+      */
     }
   }
 }
