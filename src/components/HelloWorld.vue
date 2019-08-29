@@ -51,6 +51,8 @@ export default {
       var url = node + '/transaction/' + hashstring + '/status';
       console.log(url);
       request(url, function (error, response, body) {
+        console.log(body);
+        /*
         const user = JSON.parse(body);
         if ( (response && response.statusCode) == 200 || user["status"] == "Success") {
           console.log("Transaction Success!");
@@ -58,6 +60,7 @@ export default {
         else{
           console.log("Transaction failed");
         }
+        */
       });
     },
 
@@ -104,12 +107,12 @@ export default {
       console.log(signedTransaction.hash);
 
       //transactionHttp.announce(signedTransaction);
-      /*
+      
       transactionHttp.announce(signedTransaction)
       .subscribe(x =>{
          console.log(x)
       }, err => console.error(err));
-      */
+      
       var self = this;
       setTimeout(function(){
         self.checkvalidity("BEA12EA22A1019C967B1A3352011E19132084FF5BD07E69FC6CEB0F8D2324113");
