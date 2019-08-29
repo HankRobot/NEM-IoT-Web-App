@@ -49,14 +49,14 @@ export default {
   methods:{
     checkvalidity(hashstring){
       var url = node + '/transaction/' + hashstring + '/status';
-      console.log(url);
+      alert(url);
       request(url, function (error, response, body) {
         const user = JSON.parse(body);
         if ( (response && response.statusCode) == 200 || user["status"] == "Success") {
-          console.log("Transaction Success!");
+          alert("Transaction Success!");
         }
         else{
-          console.log("Transaction failed");
+          alert("Transaction failed");
         }
       });
     },
