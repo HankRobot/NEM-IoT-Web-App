@@ -37,7 +37,7 @@ import {Account,
 
 import request from 'request';
 
-const node = 'http://47.107.245.217:3000';
+const node = 'https://jp5.nemesis.land:3001/';
 
 export default {
   name: 'HelloWorld',
@@ -51,8 +51,6 @@ export default {
       var url = node + '/transaction/' + hashstring + '/status';
       console.log(url);
       request(url, function (error, response, body) {
-        console.log(body);
-        /*
         const user = JSON.parse(body);
         if ( (response && response.statusCode) == 200 || user["status"] == "Success") {
           console.log("Transaction Success!");
@@ -60,7 +58,6 @@ export default {
         else{
           console.log("Transaction failed");
         }
-        */
       });
     },
 
