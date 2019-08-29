@@ -8,11 +8,11 @@
       <tr>
         <td>LED1</td>
         <td>
-          <input id="led1" type="text" name="FirstName" value="1">
+          <input id="led1" type="text" value="1">
         </td>
         <td>LED2</td>
         <td>
-          <input id="led2" type="text" name="FirstName" value="1">
+          <input id="led2" type="text" value="1">
         </td>
       </tr>
     </table>
