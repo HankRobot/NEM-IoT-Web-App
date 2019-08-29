@@ -103,7 +103,13 @@ export default {
       const signedTransaction = account.sign(aggregateTransaction, networkGenerationHash);
       console.log(signedTransaction.hash);
 
-      transactionHttp.announce(signedTransaction);
+      //transactionHttp.announce(signedTransaction);
+      
+      transactionHttp.announce(signedTransaction)
+      .subscribe(x =>{
+         console.log(x)
+
+      }, err => console.error(err));
       
       var self = this;
       setTimeout(function(){
