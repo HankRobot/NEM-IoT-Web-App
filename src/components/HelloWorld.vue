@@ -35,7 +35,7 @@ import {Account,
         UInt64,
         MosaicId} from 'nem2-sdk';
 
-import request from 'request'
+import request from 'request';
 
 const node = 'http://47.107.245.217:3000';
 
