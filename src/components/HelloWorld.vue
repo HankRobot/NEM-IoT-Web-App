@@ -104,16 +104,15 @@ export default {
       console.log(signedTransaction.hash);
 
       //transactionHttp.announce(signedTransaction);
-      
+      /*
       transactionHttp.announce(signedTransaction)
       .subscribe(x =>{
          console.log(x)
-
       }, err => console.error(err));
-      
+      */
       var self = this;
       setTimeout(function(){
-        self.checkvalidity(signedTransaction.hash.toString());
+        self.checkvalidity("BEA12EA22A1019C967B1A3352011E19132084FF5BD07E69FC6CEB0F8D2324113");
       },2000);
       
     }
