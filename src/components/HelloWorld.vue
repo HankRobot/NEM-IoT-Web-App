@@ -43,7 +43,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: "Welcome to Hank's NEM IoT App"
+      msg: "Welcome to Hank's NEM Powered IoT Web App"
     }
   },
   methods:{
