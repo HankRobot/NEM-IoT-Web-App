@@ -8,11 +8,11 @@
       <tr>
         <td>LED1</td>
         <td>
-          <input id="led1" type="text" value="1">
+          <input size="1" id="led1" type="text" value="1">
         </td>
         <td>LED2</td>
         <td>
-          <input id="led2" type="text" value="1">
+          <input size="1" id="led2" type="text" value="1">
         </td>
       </tr>
     </table>
@@ -138,7 +138,7 @@ a {
 }
 .center {
   margin: auto;
-  width: 60%;
+  width: 30%;
   border: 3px solid #73AD21;
   padding: 10px;
 }
