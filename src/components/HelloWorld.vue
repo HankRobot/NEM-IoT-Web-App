@@ -7,17 +7,34 @@
     <table class="center">
       <tr>
         <td>LED1</td>
-        <td>
-          <input size="1" id="led1" type="text" value="1">
-        </td>
+        <td></td>
+        <td></td>
         <td>LED2</td>
+      </tr>
+      <tr>
+        <td>Message:</td>
         <td>
-          <input size="1" id="led2" type="text" value="1">
+          <input size="10" id="led1" type="text" value="1">
+        </td>
+        <td>Message:</td>
+        <td>
+          <input size="10" id="led2" type="text" value="1">
+        </td>
+      </tr>
+      <tr>
+        <td>Address:</td>
+        <td>
+          <input size="10" id="led1add" type="text" value="">
+        </td>
+        <td>Address:</td>
+        <td>
+          <input size="10" id="led2add" type="text" value="">
         </td>
       </tr>
     </table>
     <br/>
     <button @click="aggregate">Send</button>
+    <button @click="aggregate">Send Without Address</button>
     
   </div>
 </template>
