@@ -34,7 +34,6 @@
     </table>
     <br/>
     <button @click="aggregate">Send</button>
-    <button @click="aggregate">Send Without Address</button>
     
   </div>
 </template>
@@ -85,10 +84,14 @@ export default {
       const privateKey = "5D7E87DF82EB6986646B7DBB38CE792117BD106D5179ADC2E1CE0DDE8DBAEE78"; //Hank Bot
       const account = Account.createFromPrivateKey(privateKey, NetworkType.MIJIN_TEST);
 
-      const brotherAddress = 'SCQVB7TIAWI7OJFGRRRU57UPJ4BFNHORCE2JTV2J';  //Anthony Bot
-      const brotherAccount = Address.createFromRawAddress(brotherAddress); 
+      var brotherAddress = document.getElementById("led1add").value;
+      var sisterAddress = document.getElementById("led2add").value;
 
-      const sisterAddress = 'SC7APJ3C6BWK3DWVMNUJRQXETYMIC6Y2OG557QHU';  //HuiLum Bot
+      if (brotherAddress=="" && sisterAddress=="") {
+        brotherAddress = 'SCQVB7TIAWI7OJFGRRRU57UPJ4BFNHORCE2JTV2J';  //Anthony Bot
+        sisterAddress = 'SC7APJ3C6BWK3DWVMNUJRQXETYMIC6Y2OG557QHU';  //HuiLum Bot
+      }
+      const brotherAccount = Address.createFromRawAddress(brotherAddress); 
       const sisterAccount = Address.createFromRawAddress(sisterAddress);
 
       const mosaicId = "77a1969932d987d7";  
