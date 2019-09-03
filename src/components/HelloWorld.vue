@@ -135,7 +135,6 @@ export default {
       setTimeout(function(){
         self.checkvalidity(signedTransaction.hash.toString());
       },2000);
-      
     }
   }
 }
