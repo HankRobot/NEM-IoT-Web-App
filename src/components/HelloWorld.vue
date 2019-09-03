@@ -114,6 +114,7 @@ export default {
         NetworkType.MIJIN_TEST,
         []
       );
+
       aggregateTransaction.maxFee = UInt64.fromUint(parseInt(aggregateTransaction.serialize().substring(0,4),16)*100);
       console.log(parseInt(aggregateTransaction.serialize().substring(0,4),16)*100);
       /* end block 01 */
@@ -132,7 +133,7 @@ export default {
       
       var self = this;
       setTimeout(function(){
-        self.checkvalidity("BEA12EA22A1019C967B1A3352011E19132084FF5BD07E69FC6CEB0F8D2324113");
+        self.checkvalidity(signedTransaction.hash.toString());
       },2000);
       
     }
